@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href= "cssH_4.css" />
+		<meta charset="utf-8" />
+		<title>CSS Homework</title>
+	</head>
+	<body>
+		<div id="topleft">
+			<a href="#">Link 1</a>
+			<a href="#">Link 2</a>
+			<a href="#">Link 3</a>
+			<a href="#">Link 4</a>
+			<a href="#">Link 5</a>
+		</div>
+		<div id="main">
+			<div id="nested">
+				<table border="1" id="firsttable">
+					<caption>Table control menu</caption>
+					<tr>
+						<td id="firstbelieve">
+							<img src="Believe In Myself.jpg" alt="Believe" id="believePic">
+						</td>
+					</tr>
+					<tr>
+						<td><button type="button" onclick="alert('Hello world!')">Collapse</button></td>
+					</tr>
+					<tr>
+						<td><button type="button" onclick="alert('Hello world!')">Add List Item </button></td>
+					</tr>
+					<tr>
+						<td><button type="button" onclick="alert('Hello world!')">Check form</button></td>
+					</tr>
+				</table>
+				<fieldset>
+					<legend>My Account</legend>
+						<form>
+							First name: <input type="text" name="name"> </br>
+							My years: <input type="text" name="years">
+							My sex: 
+							<input type="radio" name="gender" id="male" value="male">
+							<label for="male">Male</label>
+							<input type="radio" name="gender" id="female" value="female">
+							<label for="female">Female</label>
+							I speak:
+							<input type="checkbox" name="language" value="Bulgarian" id="bulgarian">
+							<label for="bulgarian">Bulgarian</label>
+							<input type="checkbox" name="language" value="English" id="english">
+							<label for="english">English</label>
+							I use:
+							<select id="hands">
+								<option value="right">Right hand</option>
+								<option value="left">Left hand</option>
+							</select>
+					</form>
+				</fieldset>
+				<div id="listtitle">
+					Unordered list
+				</div>
+				<ol reversed="reversed" align="right" id="list">
+					<li>1 Item</li>
+					<li>1 Text</li>
+				</ol>
+				<div id="background"></div>
+			</div>
+			<div>
+				<a href="http://enevsoft.net/" id="lefthyperlink" target="_blank">Yordan Enev</a>
+				<a href="http:/webacademy.bg/" id="righthyperlink" target="_blank">Web Academy</a>
+			</div>
+		</div>
+	</body>
+</html>

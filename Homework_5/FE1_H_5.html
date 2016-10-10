@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href= "cssH_4.css" />
+		<meta charset="utf-8" />
+		<title>Are you ready? Final Exam!</title>
+        <style>
+            body	{
+		                background-image: url("i-believe.jpg");
+		                background-position: center bottom;
+		                background-repeat: no-repeat;
+		                background-attachment: fixed;
+		                background-size: 1000px 270px;
+	                }
+
+            #topleft{
+		                width: 100%;
+		                background-color: #faceb0;
+                    }
+        
+            a:link{
+
+                    }
+
+            a:visited{
+
+                    }
+
+            a:hover{
+		                 color: red;
+		                 background-color: yellow;
+		                 border-style: dashed;			
+		                 border-width: 2px;
+		                 border-color: lightblue;
+                    }
+
+            a:active{
+
+                    }
+
+               #main{
+		                 width: 80%;
+		                 border-color: blue;
+		                 border-style: solid;
+		                 margin-left: auto;
+		                 margin-right: auto;
+
+                    }
+
+              #nested{
+		                 border-color: red;
+		                 border-style: solid;
+		                 border-width: 1px;
+		                 width: 95%;
+		                 height: 111%;
+		                 margin-left: auto;
+		                 margin-right: auto;
+		                 padding-bottom: 170px;
+                      }   
+
+               #firstbelieve{
+		                 background-color: lightblue;
+		                 border-style:hidden;
+                        }
+
+                #believePic{
+		                 margin-left: auto;
+		                 margin-right: auto;
+		                 border-style: dashed;
+                        }
+
+                #firsttable{
+		                 margin-left: auto;
+		                 margin-right: auto;
+		                 border-spacing: 15px 5px;
+		                 empty-cells: show;
+		                 height: 90%;
+		                 caption-side: bottom;
+                        }
+
+                #list{
+		                 list-style: inside;
+                     }
+
+                 #listtitle{
+		                 text-align: right;
+                     }
+
+                 #righthyperlink{
+		                 text-align: right;
+		                 float: right;
+                        }
+         </style>
+	</head>
+	<body>
+		<div id="topleft">
+			<a href="#">Link 1</a>
+			<a href="#">Link 2</a>
+			<a href="#">Link 3</a>
+			<a href="#">Link 4</a>
+			<a href="#">Link 5</a>
+		</div>
+		<div id="main">
+			<div id="nested">
+				<table border="1" id="firsttable">
+					<caption>Table control menu</caption>
+					<tr>
+						<td id="firstbelieve">
+							<img src="Believe In Myself.jpg" alt="Believe" id="believePic">
+						</td>
+					</tr>
+					<tr>
+						<td><button value="Collapse" type="button" id="firstButton" onclick=changeName();>Collapse</button></td>
+					</tr>
+					<tr>
+						<td><button type="button" id="secondButton" onclick=addInfo();>Add List Item </button></td>
+					</tr>
+					<tr>
+						<td><button type="button"  onclick="isNullCheck();">Check form</button></td>
+					</tr>
+				</table>
+				<fieldset>
+					<legend>My Account</legend>
+						<form id="my_form" name="my_form">
+							First name: <input type="text" name="name" id="name"> </br>
+							My years: <input type="text" name="years">
+							My sex: 
+							<input type="radio" name="gender" id="male" value="male">
+							<label for="male">Male</label>
+							<input type="radio" name="gender" id="female" value="female">
+							<label for="female">Female</label>
+							I speak:
+							<input type="checkbox" name="language" value="Bulgarian" id="bulgarian">
+							<label for="bulgarian">Bulgarian</label>
+							<input type="checkbox" name="language" value="English" id="english">
+							<label for="english">English</label>
+							I use:
+							<select id="hands">
+								<option value="right">Right hand</option>
+								<option value="left">Left hand</option>
+							</select>
+					</form>
+				</fieldset>
+				<div id="listtitle">
+					Unordered list
+				</div>
+				<ol reversed="reversed" align="right" id="list">
+					<li>1 Item</li>
+					<li>1 Text</li>
+				</ol>
+				<div id="background"></div>
+			</div>
+			<div>
+				<a href="http://enevsoft.net/" id="lefthyperlink" target="_blank">Yordan Enev</a>
+				<a href="http:/webacademy.bg/" id="righthyperlink" target="_blank">Web Academy</a>
+			</div>
+		</div>
+
+        <script>
+            function isNullCheck()
+            {
+                
+                if (document.getElementById("name").value) {
+                    alert("Different from null");
+                }
+                else
+                {
+
+                    var answer = confirm("Искате ли да изпратите формата без име?")
+                    if (answer) {
+                        alert("");
+                    }
+                    else {
+                        alert('Действието е отказано от потребителя!')
+                    }
+                }
+            }
+
+            function changeName()
+            {
+                if (document.getElementById("firstButton").innerHTML == "Collapse")
+                {
+                    document.getElementById("firstButton").innerHTML = "Expand";
+                    document.getElementById("nested").style.width = "65%";
+                }
+
+                else
+                {
+                    document.getElementById("firstButton").innerHTML = "Collapse";
+                    document.getElementById("nested").style.width = "95%";
+                }
+            }
+            var number = 0;
+
+            function addInfo()
+            {
+                var ul = document.getElementById('list');
+                var li = document.createElement("li");
+
+                var additionalInfo = prompt('Въведете допълнителна информация: ', 'Информация ' + number);
+                if (additionalInfo === null)
+                {
+                    return;
+                }
+                if (!additionalInfo.includes(number)) {
+                    
+                    var opt = document.createElement('option');
+                    opt.value = additionalInfo;
+                    var value = document.createTextNode(additionalInfo);
+                    opt.appendChild(value);
+                    li.appendChild(opt);
+                    ul.appendChild(li);
+                }
+                else
+                {
+                    var opt = document.createElement('option');
+                    opt.value = additionalInfo;
+                    var value = document.createTextNode(additionalInfo);
+                    opt.appendChild(value);
+                    li.appendChild(opt);
+                    ul.appendChild(li);
+
+                    number++;
+                }
+          }
+        </script>
+	</body>
+</html>

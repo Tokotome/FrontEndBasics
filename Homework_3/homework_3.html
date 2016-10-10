@@ -1,0 +1,66 @@
+<!DOCTYPE XHTML Frameset DTD>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Homework Forms</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td width="360">
+				<form method="post",  action="http://Enevsoft.net/echo.php" target="result_frame" name="homework_form">
+					<fieldset>
+						<legend>Добавяне на нов въпрос</legend>
+							<table border="1">
+								<tr>
+									<td>Вашият e-mail</td>
+									<td><input type="text" name="email" required="required"></td>
+								</tr>
+								<tr>
+									<td>Заглавие на въпроса</td>
+									<td><input type="text" name="question" required="required"></td>
+								</tr>
+								<tr>
+									<td>Относно курсове</td>
+									<td>
+										<input type="checkbox" name="course[0]" value="0" checked="checked" id="fe1_id">
+										<label for="fe1_id">FE1</label>
+										<input type="checkbox" name="course[1]" value="1" id="fe2_id">
+										<label for="fe2_id">FE2</label>
+										<input type="checkbox" name="course[2]" value="2", checked="checked" id="php">
+										<label for="php">PHP</label>
+									</td>
+								</tr>
+								<tr>
+									<td>Искам анонимност?</td>
+									<td>
+										<input type="radio" name="yesno" value="0" checked="checked" id="yes">
+										<label for="yes">ДА</label>
+										<input type="radio" name="yesno" value="1" id="no">
+										<label for="no">Не</label>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">Въпрос</td>
+								</tr>
+								<tr>
+									<td colspan="2"><textarea rows="4" cols="90" placeholder="Моля, не се плашете! Лесно е! :-)"></textarea></td>
+								</tr>
+								<tr>
+									<td align="left"><button type="submit" value="Submit">Submit</button></td>
+									<td align="right"><button type="reset" value="Reset">Reset</button></td>
+								</tr>
+							</table>
+					</fieldset>
+				</form>
+			</td>
+			<td>
+				<frameset>
+					<iframe name="result_frame" height="100%">This frame cannot be displayed</iframe>
+				</frameset>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
